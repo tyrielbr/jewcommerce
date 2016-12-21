@@ -1,0 +1,113 @@
+{% extends "base.html" %}
+
+{% block title %}
+	{{ Product }} | {{ block.super }}
+{% endblock %}
+
+{% block container %}
+{% load static %}
+<div class="single">
+   <div class="container">
+   	 <div class="single-main">
+   	 	<div class="single-top-main">
+	   		<div class="col-md-5 single-top">	
+			   <div class="flexslider">
+				  <ul class="slides">
+				    <li data-thumb="{% static 'images/si1.jpg' %}">
+				        <div class="thumb-image"> <img src="{% static 'images/s1.jpg' %}" data-imagezoom="true" class="img-responsive"> </div>
+				    </li>
+				    <li data-thumb="{% static 'images/si2.jpg' %}">
+				         <div class="thumb-image"> <img src="{% static 'images/s2.jpg' %}" data-imagezoom="true" class="img-responsive"> </div>
+				    </li>
+				    <li data-thumb="{% static 'images/si3.jpg' %}">
+				       <div class="thumb-image"> <img src="{% static 'images/s3.jpg' %}" data-imagezoom="true" class="img-responsive"> </div>
+				    </li> 
+				  </ul>
+			</div>
+			</div>
+			<div class="col-md-7 single-top-left simpleCart_shelfItem">
+				<h1>{{ product }}</h1>
+				<h4>{{ product.short_description }}</h4>
+				<h6 class="item_price"> R$ {{ product.price }}</h6>			
+				<p>{{ product.description|linebreaks }}</p>
+				<h4>Size Charts</h4>
+				<ul class="bann-btns">
+					<li><select class="bann-size">
+						<option value="select your location">Size</option>
+						<option value="saab">Small</option>
+						<option value="fiat">Medium</option>
+						<option value="audi">Large</option>
+					</select>
+					</li>
+					<li><a href="#" class="item_add">Add To Cart</a></li>			
+				</ul>
+				<br>
+				<h7>TAGS: {{ product.tags }}</h7>
+			</div>
+		   <div class="clearfix"> </div>
+	   </div>
+	   <div class="singlepage-product">
+		   	 <div class="col-md-3 home-grid">
+					<div class="home-product-main">
+					   <div class="home-product-top">
+					      <a href="#"><img src="{% static 'images/h14.jpg' %}" alt="" class="img-responsive zoom-img"></a>
+					   </div>
+						<div class="home-product-bottom">
+								<h3><a href="#">Smart Shopping</a></h3>
+								<p>Explore Now</p>						
+						</div>
+						<div class="srch">
+							<span>$200</span>
+						</div>
+					</div>
+				 </div>
+			      <div class="col-md-3 home-grid">
+					<div class="home-product-main">
+					   <div class="home-product-top">
+					      <a href="#"><img src="{% static 'images/h15.jpg' %}" alt="" class="img-responsive zoom-img"></a>
+					   </div>
+						<div class="home-product-bottom">
+								<h3><a href="#">Smart Shopping</a></h3>
+								<p>Explore Now</p>						
+						</div>
+						<div class="srch">
+							<span>$200</span>
+						</div>
+					</div>
+				 </div>
+				 <div class="col-md-3 home-grid">
+					<div class="home-product-main">
+					   <div class="home-product-top">
+					      <a href="#"><img src="{% static 'images/h16.jpg' %}" alt="" class="img-responsive zoom-img"></a>
+					   </div>
+						<div class="home-product-bottom">
+								<h3><a href="#">Smart Shopping</a></h3>
+								<p>Explore Now</p>						
+						</div>
+						<div class="srch">
+							<span>$200</span>
+						</div>
+					</div>
+				 </div>
+			      <div class="col-md-3 home-grid">
+					<div class="home-product-main">
+					   <div class="home-product-top">
+					      <a href="#"><img src="{% static 'images/h17.jpg' %}" alt="" class="img-responsive zoom-img"></a>
+					   </div>
+						<div class="home-product-bottom">
+								<h3><a href="#">Smart Shopping</a></h3>
+								<p>Explore Now</p>						
+						</div>
+						<div class="srch">
+							<span>$200</span>
+						</div>
+					</div>
+				 </div>
+		  <div class="clearfix"> </div>
+	   </div>
+   	 </div>
+   </div>
+</div>
+{% endblock %}
+
+

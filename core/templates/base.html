@@ -1,0 +1,200 @@
+<!--Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE HTML>
+{% load static %}
+<html>
+<head>
+<title>{% block title %} Rovier - enaltecendo a beleza de cada mulher{% endblock %}</title>
+<link href="{% static 'css/bootstrap.css' %}" rel="stylesheet" type="text/css" media="all">
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="{% static 'js/jquery-1.11.0.min.js' %}"></script>
+<!-- Custom Theme files -->
+<link href="{% static 'css/style.css' %}" rel="stylesheet" type="text/css" media="all"/>
+<!-- Custom Theme files -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Shoplist Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!--Google Fonts-->
+<link href='//fonts.googleapis.com/css?family=Hind:400,500,300,600,700' rel='stylesheet' type='text/css'>
+<link href='//fonts.googleapis.com/css?family=Oswald:400,700,300' rel='stylesheet' type='text/css'>
+<!-- start-smoth-scrolling -->
+<script type="text/javascript" src="{% static 'js/move-top.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/easing.js' %}"></script>
+	<script type="text/javascript">
+			jQuery(document).ready(function($) {
+				$(".scroll").click(function(event){		
+					event.preventDefault();
+					$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+				});
+			});
+	</script>
+<!-- //end-smoth-scrolling -->
+<script src="{% static 'js/simpleCart.min.js' %}"> </script>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+<script src="{% static 'js/jquery.jscrollpane.min.js' %}"></script>
+<script src="{% static 'js/jquery.flexslider.js' %}"></script>
+<script src="{% static 'js/imagezoom.js' %}"></script>
+<link rel="stylesheet" href="{% static 'css/flexslider.css' %}" type="text/css" media="screen" />
+
+<script>
+// Can also be used with $(document).ready()
+$(window).load(function() {
+  $('.flexslider').flexslider({
+    animation: "slide",
+    controlNav: "thumbnails"
+  });
+});
+</script>
+</head>
+<body>
+<!--header strat here-->
+<div class="header">
+	<div class="container">
+		<div class="header-main">
+			<div class="top-nav">
+				<div class="content white">
+	              <nav class="navbar navbar-default" role="navigation">
+					    <div class="navbar-header">
+					        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+						        <span class="sr-only">Toggle navigation</span>
+						        <span class="icon-bar"></span>
+						        <span class="icon-bar"></span>
+						        <span class="icon-bar"></span>
+					        </button>
+					        <div class="navbar-brand logo">
+								<a href="index.html"><img src="{% static 'images/logo1.png' %}" alt=""></a>
+							</div>
+					    </div>
+					    <!--/.navbar-header-->
+					 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					        <ul class="nav navbar-nav">
+					        	   <li><a href="{% url 'index' %}">Início</a></li>
+						             <li class="dropdown">
+						        	<a href="#" class="dropdown-toggle" data-toggle="dropdown">Lançamentos<b class="caret"></b></a>
+						            <ul class="dropdown-menu multi-column columns-1">
+							            <div class="row">
+								            <div class="col-sm-4">
+									            <ul class="multi-column-dropdown">
+									            	{% for category in categories %}
+										            <li><a href="{{ category.get_absolute_url }}">{{ category }}</a></li>
+										            {% endfor %}
+									            </ul>
+								            </div>
+							            </div>
+						            </ul>
+						        </li>
+						            <li class="dropdown">
+						        	<a href="#" class="dropdown-toggle" data-toggle="dropdown">Ofertas<b class="caret"></b></a>
+						            <ul class="dropdown-menu multi-column columns-1">
+							            <div class="row">
+								            <div class="col-sm-4">
+									            <ul class="multi-column-dropdown">
+										            {% for category in categories %}
+										            <li><a href="#">{{ category }}</a></li>
+										            {% endfor %}
+									            </ul>
+								            </div>
+							            </div>
+						            </ul>
+						        </li>
+						        </li>
+						        <li><a href="{% url 'contact' %}">Contato</a></li>
+					        </ul>
+					    </div>
+					    <!--/.navbar-collapse-->
+					</nav>
+					<!--/.navbar-->
+				</div>
+			</div>
+			<div class="header-right">
+				<div class="search">
+					<div class="search-text">
+					    <input class="serch" type="text" value="Buscar" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Buscar';}"/>
+					</div>
+					<div class="cart box_1">
+						<a href="checkout.html">
+						<h3>
+							<img src="{% static 'images/cart.png' %}" alt=""/>
+							<div class="total">
+							<span class="simpleCart_total"></span></div>
+							</h3>
+						</a>
+						<p><a href="javascript:;" class="simpleCart_empty">Carrinho Vazio</a></p>
+					</div>    
+					<div class="head-signin">
+						<h5><a href="login.html"><i class="hd-dign"></i>Logar</a></h5>
+					</div>              
+                     <div class="clearfix"> </div>					
+				</div>
+			</div>
+		 <div class="clearfix"> </div>
+		</div>
+	</div>
+</div>
+{% block container %}
+
+{% endblock %}
+<div class="footer">
+	<div class="container">
+		<div class="footer-main">
+			<div class="ftr-grids-block">
+				<div class="col-md-3 footer-grid">
+					<ul>
+						<li><a href="product.html">Acessórios</a></li>
+						<li><a href="product.html">Aneis</a></li>
+						<li><a href="product.html">Brincos</a></li>
+						<li><a href="product.html">Colares</a></li>
+						<li><a href="product.html">Pingentes</a></li>
+						<li><a href="product.html">Pulseiras</a></li>
+					</ul>
+				</div>
+				<div class="col-md-3 footer-grid">
+					<ul>
+						<li><a href="login.html">Sua conta</a></li>
+						<li><a href="contact.html">Fale Conosco</a></li>
+						<li><a href="product.html">Localização</a></li>
+						<li><a href="pressroom.html">Blog</a></li>
+					</ul>
+				</div>
+				<div class="col-md-3 footer-grid">
+					<ul>
+						<li><a href="terms.html">Termos e Serviços</a></li>
+						<li><select class="country">
+										<option value="selecione seu país">Selecione o País</option>
+										<option value="saab">Estados Unidos</option>
+										<option value="fiat">Brasil</option>
+										<option value="audi">Itália</option>
+									</select>
+							
+						</li>
+					</ul>
+				</div>
+				<div class="col-md-3 footer-grid-icon">
+					<ul>
+						<li><a href="#"><span class="u-tub"> </span></a></li>
+						<li><a href="#"><span class="instro"> </span></a></li>
+						<li><a href="#"><span class="twitter"> </span></a></li>
+						<li><a href="#"><span class="fb"> </span></a></li>
+						<li><a href="#"><span class="print"> </span></a></li>
+					</ul>
+					<form>
+					<input class="email-ftr" type="text" value="Newsletter" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Newsletter';}">
+					<input type="submit" value="Submeter"> 
+					</form>
+				</div>
+		    <div class="clearfix"> </div>
+		  </div>
+		  <div class="copy-rights">
+		     <p>© 2016 Shoplist. All Rights Reserved | Design by  <a href="http://w3layouts.com/" target="_blank">W3layouts</a> </p>
+		   </div>
+		</div>
+	</div>
+</div>
+<!--footer end here-->
+</body>
+</html>
