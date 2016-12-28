@@ -53,7 +53,7 @@ MIDDLEWARE_CLASSES = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'jewecommerce.urls'
+ROOT_URLCONF = 'jewcommerce.urls'
 
 TEMPLATES = [
     {
