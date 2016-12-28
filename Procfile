@@ -1,1 +1,1 @@
-web: gunicorn jewcommerce.wsgi --log-file-
+web: gunicorn jewecommerce.wsgi --log-file-
