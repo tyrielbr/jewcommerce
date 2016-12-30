@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-
+{% load widget_tweaks %}
 {% block title %}
 	Contato | {{ block.super }}
 {% endblock %}
@@ -24,13 +24,30 @@
 			</div>
 			<div class="col-md-6 contact-right">
 				<h3>Feedback</h3>
-			<form>
-				<input type="text" placeholder="Name" required="">
+				{% if success %}
+				<div class="alert alert-success">
+					Mensagem Enviada com sucesso!
+				</div>
+				{% endif %}
+			<form method="post">
+			{% csrf_token %}
+			{% for field in form %}
+				<label for = "{{ field.auto_id }}" class="form" >{{ field.label }}</label>
+				<div class="form-group{% if field.errors %} has-error{% endif %}">
+					{% render_field field class='form-control' %}
+					{% for error in field.errors %}
+					<span class="help-block">{{ error }}</span>
+					{% endfor %}
+				<!--- <input type="text" placeholder="Name" required="">
 				<input type="text" placeholder="Email" required="">
-				<textarea placeholder="Message" required=""></textarea>
+				<textarea placeholder="Message" required=""></textarea> -->
+				</div>
+			{% endfor %}	
 				<input type="submit" value="send">
 			</form>
+			
 			</div>
+			
 		  <div class="clearfix"> </div>
 		</div>
 	</div>

@@ -25,7 +25,7 @@ class Product(models.Model):
 	name = models.CharField('Nome', max_length=100)
 	slug = models.SlugField('Identificador', max_length=100)
 	category = models.ForeignKey('catalog.Category', verbose_name='Categoria')
-	short_description = models.TextField('Descrição curta', blank=True, max_length=150)
+	short_description = models.TextField('Descrição curta', blank=True, max_length=60)
 	description = models.TextField('Descrição', blank=True)
 	price = models.DecimalField('Preço', decimal_places=2, max_digits=10)
 	tags = models.TextField('tags', blank=True, max_length=50)

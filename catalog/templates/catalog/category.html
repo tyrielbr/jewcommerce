@@ -1,12 +1,12 @@
 {% extends "base.html" %}
 
-
 {% block title %}
 	{{ current_category }} | {{ block.super }}
 {% endblock %}
 
 {% block container %}
 {% load static %}
+{% load pagination %}
 <div class="header-main">
 	<div class="container">
 		<div class="product-main">
@@ -17,7 +17,7 @@
 <div class="product">
 	<div class="container">
 		<div class="product-main">
-			  <div class=" product-menu-bar">
+			 <div class=" product-menu-bar">
 			    	<div class="col-md-3 prdt-right">
 					<div class="w_sidebar">
 						<section  class="sky-form">
@@ -96,10 +96,10 @@
 								</ul>
 						</section>
 					</div>
-				</div>
+				</div>-->
 			  </div>	
 			  <div class="col-md-9 product-block">
-			  	{% for product in product_list %}
+			  {% for product in product_list %}
 			  	<div class="col-md-4 home-grid">
 					<div class="home-product-main">
 					   <div class="home-product-top">
@@ -114,11 +114,12 @@
 						</div>
 					</div>
 				 </div>
-			  	{% endfor %}
-			     
+			{% endfor %}  
 
-			      <div class="clearfix"> </div>
+			    <div class="clearfix"> </div>
+				{% pagination request paginator page_obj %}
 			  </div>
+
 		</div>
 	</div>
 </div>
