@@ -7,7 +7,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 {% load static %}
 <html>
 <head>
-<title>{% block title %} Rovier - enaltecendo a beleza de cada mulher{% endblock %}</title>
+<title>{% block title %} Rovier - enaltecendo a beleza de cada mulher {% endblock %}</title>
 <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet" type="text/css" media="all">
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="{% static 'js/jquery-1.11.0.min.js' %}"></script>
@@ -127,7 +127,12 @@ $(window).load(function() {
 						<p><a href="javascript:;" class="simpleCart_empty">Carrinho Vazio</a></p>
 					</div>    
 					<div class="head-signin">
-						<h5><a href="login.html"><i class="hd-dign"></i>Logar</a></h5>
+						 {% if user.is_authenticated %}
+        				<h5><li> Olá, {{ user }} , <a href="{% url 'logout' %}">sair</a></li></h5>
+
+        				{% else %}
+						<h5><a href="{% url 'login' %}"><i class="hd-dign"></i>Logar</a></h5>
+						{% endif %}
 					</div>              
                      <div class="clearfix"> </div>					
 				</div>
