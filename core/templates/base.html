@@ -128,10 +128,10 @@ $(window).load(function() {
 					</div>    
 					<div class="head-signin">
 						 {% if user.is_authenticated %}
-        				<h5><li> Olá, {{ user }} , <a href="{% url 'logout' %}">sair</a></li></h5>
-
+        				<h5><span> Olá, {{ user }} , <a href="{% url 'logout' %}">sair</a></span></h5>
         				{% else %}
-						<h5><a href="{% url 'login' %}"><i class="hd-dign"></i>Logar</a></h5>
+						<h5><a href="{% url 'login' %}"><span class="glyphicon glyphicon-user" style=" padding: 5px;"></span> Logar</a></h5>
+						<h5><a href="{% url 'accounts:register' %}"><span class="glyphicon glyphicon-pencil" style=" padding: 5px;"></span> Registrar-se</a></h5>
 						{% endif %}
 					</div>              
                      <div class="clearfix"> </div>					
